@@ -23,7 +23,7 @@ DB_PORT=5432
 ### Приложение работает на Docker-compose
 На DockerHub образ проекта размещен под именем **angelnad/infra_web** <br>
 
-![Yamdb-app_workflow](https://github.com/AngelNad/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![Django-app-yamdb workflow](https://github.com/AngelNad/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 _Команды для запуска приложения в контейнерах:_
 - Разверните контейнеры в папке /infra запустив docker-compose командой
