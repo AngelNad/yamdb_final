@@ -14,7 +14,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: angelnad/infra_web:latest
+    image: angelnad/yamdb_final:latest
     restart: always
     volumes:
       # Контейнер web будет работать с данными, хранящиеся в томе static_value,
