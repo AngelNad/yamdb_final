@@ -21,7 +21,7 @@ DB_HOST=db <br>
 DB_PORT=5432
 
 ### Приложение работает на Docker-compose
-На DockerHub образ проекта размещен под именем **angelnad/yamdb_final** <br>
+Образ проекта на DockerHub **angelnad/yamdb_final** <br>
 
 _**Workflow status badge:**_<br>
 ![Django-app-yamdb workflow](https://github.com/AngelNad/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
