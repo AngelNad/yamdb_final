@@ -10,7 +10,7 @@
 - Djangorestframework 3.12.4
 
 
-### Заполнение .env
+### Заполнение файла .env
 
 _Создайте в директории /infra файл .env с переменными окружения для работы с базой данных со значениями:_
 DB_ENGINE=django.db.backends.postgresql<br>
