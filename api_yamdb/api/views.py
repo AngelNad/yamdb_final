@@ -1,31 +1,22 @@
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
 from rest_framework import filters, status, viewsets
-from django.core.mail import send_mail
-from django.contrib.auth.tokens import default_token_generator
-from rest_framework.response import Response
-from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.decorators import action, api_view, permission_classes
-from api_yamdb.settings import ADMIN_EMAIL
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-
 from reviews.models import Category, Genre, Review, Title
 from users.models import User
 
+from api_yamdb.settings import ADMIN_EMAIL
+
 from .filters import TitleFilter
-from .permissions import (IsAuthorOrReadOnly,
-                          IsModerator,
-                          IsAdmin,
-                          ReadOnly)
-from .serializers import (CategorySerializer,
-                          CommentSerializer,
-                          GenreSerializer,
-                          ReviewSerializer,
-                          TitleCreateSerializer,
-                          TitleSerializer,
-                          UserSerializer,
-                          AdminUserSerializer,
-                          SignupSerializer,
-                          TokenSerializer)
+from .permissions import IsAdmin, IsAuthorOrReadOnly, IsModerator, ReadOnly
+from .serializers import (AdminUserSerializer, CategorySerializer,
+                          CommentSerializer, GenreSerializer, ReviewSerializer,
+                          SignupSerializer, TitleCreateSerializer,
+                          TitleSerializer, TokenSerializer, UserSerializer)
 
 
 class TitleViewSet(viewsets.ModelViewSet):

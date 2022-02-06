@@ -4,8 +4,7 @@ from django.conf import settings
 from django.core.management import BaseCommand
 
 from api_yamdb.reviews.models import (Category, Comment, Genre, GenreTitle,
-                                      Review,
-                                      Title)
+                                      Review, Title)
 from api_yamdb.users.models import User
 
 TABLES_DICT = {
