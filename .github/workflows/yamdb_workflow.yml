@@ -54,7 +54,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: angelnad/infra_web:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
 
   deploy:
     runs-on: ubuntu-latest
