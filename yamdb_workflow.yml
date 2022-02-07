@@ -53,12 +53,14 @@ jobs:
         # Пуш образа в Docker Hub
         uses: docker/build-push-action@v2
         with:
+          context: ./api_yamdb
           push: true
-          tags: angelnad/infra_web:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
 
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
@@ -70,6 +72,7 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm web
+            rm -f .env
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
