@@ -16,4 +16,4 @@ RUN pip3 install -r requirements.txt --no-cache-dir
 COPY . .
 
 # Выполнить запуск сервера разработки при старте контейнера.
-CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]
+CMD ["/bin/bash", "myscript.sh"]
