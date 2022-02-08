@@ -16,4 +16,5 @@ RUN pip3 install -r requirements.txt --no-cache-dir
 COPY . .
 
 # Выполнить запуск сервера разработки при старте контейнера.
-CMD ["/bin/bash", "/myscript.sh"]
+RUN chmod +x myscript.sh
+RUN myscript.sh
