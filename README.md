@@ -14,7 +14,7 @@
 
 ### Заполнение файла .env
 
-_Создайте в директории /infra файл .env с переменными окружения для работы с базой данных со значениями:_
+_Создайте в директории /infra файл .env с переменными окружения для работы с базой данных со значениями:_<br>
 DB_ENGINE=django.db.backends.postgresql<br>
 DB_NAME=postgres <br>
 POSTGRES_USER=postgres <br>
@@ -64,6 +64,6 @@ docker-compose exec web python manage.py loaddata > fixtures.json
 docker-compose exec web python manage.py dumpdata > fixtures.json
 ```
 
-### Авторы:
-Надежда Осипова
+### Автор:
+Надежда Осипова - [AngelNad](https://github.com/AngelNad)
 
